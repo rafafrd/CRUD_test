@@ -25,6 +25,12 @@ const alunoModel = {
     const [rows] = await pool.query(sql, values);
     return rows;
   },
+  deletaAluno: async(pId)=>{
+    const sql='DELETE FROM alunos WHERE id=?;';
+    const values = [pId];
+    const [rows] = await pool.query(sql, values);
+    return rows;
+  }
 };
 
 module.exports = { alunoModel };
